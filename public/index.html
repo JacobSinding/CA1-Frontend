@@ -16,38 +16,153 @@
   <div id="all-content" style="display: none;">
     <ul id="menu" class="header">
       <li><a href="" id="about">About</a></li>
-      <li><a href="" id="ex1">Ex1</a></li>
-      <li><a href="" id="ex2">Ex2</a></li>
-      <li><a href="" id="ex3">Ex3</a></li>
+      <li><a href="" id="person">Persons</a></li>
+      <li><a href="" id="get_person_by_phone">Find by phone</a></li>
+      <li><a href="" id="get_person_by_hobby">Find by hobby</a></li>
+      <li><a href="" id="get_person_by_zip">Find by zip</a></li>
     </ul>
 
     <div class="content">
 
-      <!-- This is were you should place your basic HTML for exercise-1 -->
-      <div id="ex1_html" style="display:none;">
-        <h3>Exercise 1</h3>
-        <p>Add your basic HTML for Exercise 1 here</p>
-        <ul id="jokes"></ul>
-
+    <!--get person by phone-->
+      <div id="get_person_by_phone_html" style="display:none;">
+      <form>
+        <div class="form-group row" style="margin-top: 25px;">
+          <label for="phone_number" class="col-sm-2 col-form-label">Telefonnummer</label>
+          <div class="col-sm-8">
+            <input class="form-control" type="number" id="phone_number">
+          </div>
+          <button id="phone_number_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+          <table id="persons" class="table table-striped ">
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  ID
+                </th>
+                <th scope="col">
+                  FIRST NAME
+                </th>
+                <th scope="col">
+                  LAST NAME
+                </th>
+                <th scope="col">
+                  EMAIL
+                </th>
+                <th scope="col">CITY</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="person_by_phone_body"></tbody>
+          </table>
+        </div>
+      </form>
       </div>
-      <!-- End of HTML for exercise-1 -->
+      
+      <!-- show all persons-->
+      <div id="person_html" style="display:none;">
+        <h3>Person</h3>
+        <button type="button" id="getAllPersons">Show all persons!</button>
+        <p>List of all persons</p>
 
+        <table id="persons" class="table table-striped ">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Email</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Phone</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tablerows">
 
-
-      <!-- This is were you should place your basic HTML for exercise-2 -->
-      <div id="ex2_html" style="display:none;">
-        <h3>Exercise 2</h3>
-        <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
+          </tbody>
+        </table>
       </div>
-      <!-- End of HTML for exercise-2 -->
+  
+    
 
+      <!-- get by hobby -->
+      <div id="get_person_by_hobby_html" style="display:none;">
+        <form>
+          <div class="form-group row" style="margin-top: 25px;">
+            <label for="hobby" class="col-sm-2 col-form-label">Hobby</label>
+            <div class="col-sm-8">
+              <input class="form-control" type="text" id="hobby">
+            </div>
+            <button id="hobby_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+            <table id="persons" class="table table-striped ">
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    ID
+                  </th>
+                  <th scope="col">
+                    FIRST NAME
+                  </th>
+                  <th scope="col">
+                    LAST NAME
+                  </th>
+                  <th scope="col">
+                    EMAIL
+                  </th>
+                  <th scope="col">CITY</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody id="person_by_hobby_body"></tbody>
+            </table>
+          </div>
+        </form>
+        </div>
+
+      <!-- get by zip -->
+      <div id="get_person_by_zip_html" style="display:none;">
+        <form>
+          <div class="form-group row" style="margin-top: 25px;">
+            <label for="zip_code" class="col-sm-2 col-form-label">Postnummer</label>
+            <div class="col-sm-8">
+              <input class="form-control" type="number" id="zip_code">
+            </div>
+            <button id="zip_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+            <table id="persons" class="table table-striped ">
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    ID
+                  </th>
+                  <th scope="col">
+                    FIRST NAME
+                  </th>
+                  <th scope="col">
+                    LAST NAME
+                  </th>
+                  <th scope="col">
+                    EMAIL
+                  </th>
+                  <th scope="col">CITY</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody id="person_by_zip_body"></tbody>
+            </table>
+          </div>
+        </form>
+        </div>
 
       <!-- This is were you should place your basic HTML for exercise-3 -->
-      <div id="ex3_html" style="display:none;">
+      <div id="address_html" style="display:none;">
         <h3>Ex-3</h3>
         <p>Add your basic HTML for Exercise 3 here</p>
 
-        <div class="row" style="min-height: 5em;"">
+        <div class="row" style="min-height: 5em;">
       <div class=" col-md-8 pre-scrollable" style="background-color: lightgrey;">
           <h5>All Users</h5>
           <table class="table">
@@ -88,7 +203,7 @@
 
     <div id="about_html" style="display:none;">
       <h3>About</h3>
-      <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+      <p>CA1 gruppe a5</p>
     </div>
     <!-- End of HTML for ABOUT Page -->
 
