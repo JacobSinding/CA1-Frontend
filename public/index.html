@@ -17,9 +17,11 @@
     <ul id="menu" class="header">
       <li><a href="" id="about">About</a></li>
       <li><a href="" id="person">Persons</a></li>
+      <li><a href="" id="create_person">Create new person</a></li>
       <li><a href="" id="get_person_by_phone">Find by phone</a></li>
       <li><a href="" id="get_person_by_hobby">Find by hobby</a></li>
       <li><a href="" id="get_person_by_zip">Find by zip</a></li>
+      <li><a href="" id="get_cities">Get all cities</a></li>
     </ul>
 
     <div class="content">
@@ -28,7 +30,7 @@
       <div id="get_person_by_phone_html" style="display:none;">
       <form>
         <div class="form-group row" style="margin-top: 25px;">
-          <label for="phone_number" class="col-sm-2 col-form-label">Telefonnummer</label>
+          <label for="phone_number" class="col-sm-2 col-form-label">Phone number</label>
           <div class="col-sm-8">
             <input class="form-control" type="number" id="phone_number">
           </div>
@@ -54,7 +56,7 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody id="person_by_phone_body"></tbody>
+            <tbody id="person_by_phone"></tbody>
           </table>
         </div>
       </form>
@@ -63,27 +65,66 @@
       <!-- show all persons-->
       <div id="person_html" style="display:none;">
         <h3>Person</h3>
-        <button type="button" id="getAllPersons">Show all persons!</button>
+        <button type="submit" id="getAllPersons" class="btn btn-primary">Show all persons!</button>
         <p>List of all persons</p>
 
-        <table id="persons" class="table table-striped ">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Email</th>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>Phone</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="tablerows">
+        <div>
+          <table id="persons" class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  ID
+                </th>
+                <th scope="col">
+                  EMAIL
+                </th>
+                <th scope="col">
+                  FIRST NAME
+                </th>
+                <th scope="col">
+                  LAST NAME
+                </th>
+                <th scope="col">
+                  Phone
+                </th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="tablerows">
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
-  
-    
+
+      <!-- create person -->
+      <div id="create_person_html" style="display:none;">
+        <h3>Opret en person</h3>
+        <form style="margin-top: 30px;">
+          <div class="form-group">
+            <label for="createEmail">
+              Email address
+            </label>
+            <input type="email" class="form-control" id="createEmail">
+          </div>
+          <div class="form-group">
+            <label for="createFirstName">
+              First name
+            </label>
+            <input class="form-control" id="createFirstName">
+          </div>
+          <div class="form-group">
+            <label for="createLastName">
+              Last name
+            </label>
+            <input class="form-control" id="createLastName">
+          </div>
+          <br>
+          <button type="submit" id="create_person_button" class="btn btn-primary">Create Person</button>
+        </form>
+      </div>
+
+
 
       <!-- get by hobby -->
       <div id="get_person_by_hobby_html" style="display:none;">
@@ -93,7 +134,7 @@
             <div class="col-sm-8">
               <input class="form-control" type="text" id="hobby">
             </div>
-            <button id="hobby_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+            <button id="hobby_submit_button" type="submit" class="btn btn-primary col-sm-2">Search</button>
             <table id="persons" class="table table-striped ">
           <div>
             <table class="table">
@@ -115,7 +156,7 @@
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody id="person_by_hobby_body"></tbody>
+              <tbody id="person_by_hobby"></tbody>
             </table>
           </div>
         </form>
@@ -125,11 +166,11 @@
       <div id="get_person_by_zip_html" style="display:none;">
         <form>
           <div class="form-group row" style="margin-top: 25px;">
-            <label for="zip_code" class="col-sm-2 col-form-label">Postnummer</label>
+            <label for="zip_code" class="col-sm-2 col-form-label">Zipcode</label>
             <div class="col-sm-8">
               <input class="form-control" type="number" id="zip_code">
             </div>
-            <button id="zip_submit_button" type="submit" class="btn btn-primary col-sm-2">Søg</button>
+            <button id="zip_submit_button" type="submit" class="btn btn-primary col-sm-2">Search</button>
             <table id="persons" class="table table-striped ">
           <div>
             <table class="table">
@@ -151,11 +192,29 @@
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody id="person_by_zip_body"></tbody>
+              <tbody id="person_by_zip"></tbody>
             </table>
           </div>
         </form>
         </div>
+
+    <!--get all cities-->
+    <div id="get_cities_html" style="display:none;">
+      <h3>All cities in the database</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">
+              ZIPCODE
+            </th>
+            <th scope="col">
+              CITY
+            </th>
+          </tr>
+        </thead>
+        <tbody id="get_cities_body"></tbody>
+      </table>
+    </div>
 
       <!-- This is were you should place your basic HTML for exercise-3 -->
       <div id="address_html" style="display:none;">
@@ -179,21 +238,8 @@
             <tbody>
           </table>
         </div>
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Find User</h5>
-        </div>
       </div>
-      <div class="row" style="min-height: 5em;">
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Add User</h5>
-        </div>
-        <div class="col-md-4" style="background-color: lightgrey;">
-          <h5>Edit User</h5>
-        </div>
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Delete User</h5>
-        </div>
-      </div>
+    
       <!-- </div> -->
       <!-- End of HTML for exercise-3 -->
 
